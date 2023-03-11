@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <h1>My First Heading</h1>
+        <!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <style>
+                    * {
+                        box-sizing: border-box;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    body {
+                        font-family: Arial, sans-serif;
+                        font-size: 16px;
+                        line-height: 1.5;
+                        background-color: #f1f1f1;
+                    }
+
+                    header {
+                        background-color: #333;
+                        color: #fff;
+                        padding: 1rem;
+                        text-align: center;
+                    }
+
+                    main {
+                        padding: 1rem;
+                    }
+
+                    #messages {
+                        list-style: none;
+                        margin-bottom: 1rem;
+                    }
+
+                    #messages li {
+                        background-color: #fff;
+                        border-radius: 5px;
+                        padding: 0.5rem;
+                        margin-bottom: 0.5rem;
+                    }
+
+                    form {
+                        display: flex;
+                    }
+
+                    input[type="text"] {
+                        flex: 1;
+                        padding: 0.5rem;
+                        border-radius: 5px;
+                        border: none;
+                    }
+
+                    button[type="submit"] {
+                        padding: 0.5rem 1rem;
+                        border-radius: 5px;
+                        border: none;
+                        background-color: #333;
+                        color: #fff;
+                        margin-left: 0.5rem;
+                    }
+                </style>
+                <title>Chat Website</title>
+            </head>
+            <body>
+                <header>
+                    <h1>Chat Website</h1>
+                </header>
+                <main>
+                    <ul id="messages"></ul>
+                    <form id="message-form">
+                        <input type="text" id="message-input" placeholder="Type your message..." />
+                        <button type="submit">Send</button>
+                    </form>
+                </main>
+                <footer>
+                    <p>&copy; 2023 Chat Website</p>
+                </footer>
+                <script>
+                    const messageForm = document.querySelector("#message-form");
+                    const messageInput = document.querySelector("#message-input");
+                    const messagesList = document.querySelector("#messages");
+
+                    // function to add a new message to the chat
+                    function addMessage(message) {
+                        const li = document.createElement("li");
+                        li.textContent = message;
+                        messagesList.appendChild(li);
+                    }
+
+                    // event listener for form submission
+                    messageForm.addEventListener("submit", (event) => {
+                        event.preventDefault();
+                        const message = messageInput.value.trim();
+                        if (message !== "") {
+                            // send the message to the server here
+                            addMessage(message);
+                            messageInput.value = "";
+                        }
+                    });
+                </script>
+            </body>
+        </html>
+
+        <p>My first paragraph.</p>
+    </body>
+</html>
